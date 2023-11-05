@@ -1,0 +1,4 @@
+name: EventListenerTest
+version: '${project.version}'
+main: me.yxini.chestlistener.ChestListener
+api-version: '1.20'
