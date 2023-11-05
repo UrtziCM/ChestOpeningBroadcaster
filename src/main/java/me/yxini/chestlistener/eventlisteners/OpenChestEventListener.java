@@ -32,7 +32,7 @@ public class OpenChestEventListener implements Listener {
     public void onPlayerOpenChest(PlayerInteractEvent event) {
         /* The block that was just clicked */
         Block clickedBlock = event.getClickedBlock();
-        assert clickedBlock != null; // Make sure we dont get null blocks.
+        if (clickedBlock == null) return; // Make sure we dont get null blocks.
         if (clickedBlock.getType() == Material.CHEST && event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) { // Check if the block was a chest and if it was right-clicked
             /* Get the block location to TP later*/
             Location location = clickedBlock.getLocation().add(new Vector(0.5,1,0.5)); // Center player and set it on top of the chest.
